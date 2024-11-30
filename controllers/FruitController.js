@@ -1,5 +1,5 @@
 // FruitController.js
-const fruits = require('./fruits');
+const fruits = require('..data/fruits');
 
 const index = () => {
     console.log("Method index - Menampilkan Buah");

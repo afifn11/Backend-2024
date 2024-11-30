@@ -1,5 +1,5 @@
 // app.js
-const { index, store, update, destroy } = require('./FruitController');
+const { index, store, update, destroy } = require('.controllers/FruitController');
 
 const main = () => {
     index();
