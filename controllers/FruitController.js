@@ -1,34 +1,33 @@
-// FruitController.js
-const fruits = require('..data/fruits');
+const fruits = require("../data/fruits");
 
 const index = () => {
-    console.log("Method index - Menampilkan Buah");
-    fruits.forEach(fruit => console.log(fruit));
+    console.log("Method index - Menampilkan Daftar Buah:");
+    fruits.forEach((fruit, index) => console.log(`${index + 1}. ${fruit}`));
 };
 
 const store = (name) => {
-    console.log(`Method store - Menambahkan buah ${name}`);
+    console.log(`Method store - Menambahkan buah '${name}'`);
     fruits.push(name);
     index();
 };
 
 const update = (position, name) => {
-    console.log(`Method update - Update data ${position} menjadi ${name}`);
     if (position >= 0 && position < fruits.length) {
+        console.log(`Method update - Mengubah buah di posisi ${position + 1} menjadi '${name}'`);
         fruits[position] = name;
         index();
     } else {
-        console.log("Invalid position");
+        console.error("Posisi tidak valid!");
     }
 };
 
 const destroy = (position) => {
-    console.log(`Method destroy - Menghapus data ${position}`);
     if (position >= 0 && position < fruits.length) {
+        console.log(`Method destroy - Menghapus buah di posisi ${position + 1}`);
         fruits.splice(position, 1);
         index();
     } else {
-        console.log("Invalid position");
+        console.error("Posisi tidak valid!");
     }
 };
 
